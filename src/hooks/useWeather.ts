@@ -48,6 +48,7 @@ export function useWeather() {
         latitude: query.latitude,
         longitude: query.longitude,
         timezone: query.timezone,
+        city: query.cityId,
       });
       setData(forecast);
       setSelectedDate((current) => {

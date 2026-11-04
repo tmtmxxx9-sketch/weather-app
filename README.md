@@ -17,11 +17,11 @@ Next.js (App Router) + Tailwind CSS + Lucide React で、Open-Meteo の天気予
 `.env.local` を作成してください。
 
 ```env
-NEXT_PUBLIC_WEATHER_API_BASE_URL=https://api.open-meteo.com/v1/forecast
-NEXT_PUBLIC_WEATHER_API_KEY=free_open_meteo_key
+WEATHER_API_BASE_URL=https://api.open-meteo.com/v1/forecast
+WEATHER_API_KEY=free_open_meteo_key
 ```
 
-API のベース URL はコードに直書きせず、`process.env.NEXT_PUBLIC_WEATHER_API_BASE_URL` から読みます。`.env.local` は `.gitignore` 対象です。
+ブラウザは `/api/weather` だけを呼びます。Open-Meteo の URL とキーはサーバー側の Route Handler でのみ参照し、`NEXT_PUBLIC_` では公開しません。`.env.local` は `.gitignore` 対象です。
 
 ## 起動
 
