@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 天気予報アプリ
 
-## Getting Started
+Next.js (App Router) + Tailwind CSS + Lucide React で、Open-Meteo の天気予報を表示します。
 
-First, run the development server:
+## 機能
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- 東京・大阪・名古屋・岐阜・福岡・札幌のプリセット都市
+- 現在地（GPS）取得
+- 気温、天気、湿度、降水確率、風速
+- 直近7日の日付タブとカレンダー切り替え
+- 選択日の時間別予報
+- ローディング / エラー表示
+- 天気に応じた背景グラデーション
+
+## 環境変数
+
+`.env.local` を作成してください。
+
+```env
+NEXT_PUBLIC_WEATHER_API_BASE_URL=https://api.open-meteo.com/v1/forecast
+NEXT_PUBLIC_WEATHER_API_KEY=free_open_meteo_key
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+API のベース URL はコードに直書きせず、`process.env.NEXT_PUBLIC_WEATHER_API_BASE_URL` から読みます。`.env.local` は `.gitignore` 対象です。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 起動
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm install
+npm run dev
+```
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[http://localhost:3000](http://localhost:3000) を開いてください。
