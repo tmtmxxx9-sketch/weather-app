@@ -5,6 +5,7 @@ import { CloudAlert } from "lucide-react";
 import { CurrentPanel } from "@/components/CurrentPanel";
 import { DateTabs } from "@/components/DateTabs";
 import { HourlyList } from "@/components/HourlyList";
+import { LifestyleAssist } from "@/components/LifestyleAssist";
 import { LocationBar } from "@/components/LocationBar";
 import { useWeather } from "@/hooks/useWeather";
 import { PRESET_CITIES } from "@/lib/cities";
@@ -109,6 +110,12 @@ export function WeatherApp() {
               days={data.daily}
               selectedDate={selectedDate}
               onSelect={setSelectedDate}
+            />
+            <LifestyleAssist
+              current={data.current}
+              selectedDay={selectedDay}
+              hourly={hourlyForDay}
+              isToday={Boolean(isToday)}
             />
             <HourlyList hours={hourlyForDay} />
           </div>
